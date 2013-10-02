@@ -1,0 +1,30 @@
+<p class="lead"><%= @room.description %></p>
+
+<% if !@room.connections.empty? %>
+  You see a few exits:
+  <ul>
+    <% @room.connections.each do |c| %>
+      <li><a href="/room/<%= c.ending_room.id %>"><%= c.connection_name %> - <%= c.ending_room.name %></a></li>
+    <% end %>
+  </ul>
+<% else %>
+  You've reached the end of your journey.  There's no escape!
+<% end %>
+<div style="height:20px">&nbsp;</div>
+<!--
+<div style="position:relative; width: 1000px; height: 1000px">
+  <div style="position:absolute; top: 0px; left:0px">
+    <img src="<%= @room.background_image %>">
+  </div>
+</div> -->
+
+<div style="position:relative; width: 1000px; height: 1000px">
+  <div style="position:absolute; top: 0px; left:0px">
+    <img src="<%= @room.background_image %>">
+  </div>
+  <% @room.items.each do |item| %>
+    <div data-toggle="tooltip" title="<%= item.name %>: <%= item.description %>" onmouseover="$(this).tooltip()" style="position:absolute; top: <%= item.y_coord %>px; left: <%= item.x_coord %>px">
+      <img src="<%= item.image_url %>">
+    </div>
+  <% end %>
+</div>

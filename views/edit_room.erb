@@ -1,0 +1,10 @@
+<form role="form" action="/room/<%= @room.id %>/edit" method="post">
+  <input type="hidden" name="_method" value="put"/>
+
+  <div class="form-group">
+    <label>Room Name: </label> <input class="form-control" type="text" name="name" value="<%= @room.name %>"><br>
+    <label>Room Description: </label> <input class="form-control" type="text" name="description" value="<%= @room.description %>"><br>
+    <label>Background Image URL: </label> <input class="form-control" type="text" name="background_image" value="<%= @room.background_image %>"><br>
+    <input type="Submit">
+  </div>
+</form>

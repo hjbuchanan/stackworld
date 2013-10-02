@@ -1,0 +1,11 @@
+<form role="form" action="/room/<%= @room.id %>/items/new" method="post">
+  <div class="form-group">
+    <label>Item Name: </label> <input class="form-control" type="text" name="name"><br>
+    <label>Item Description: </label> <input class="form-control" type="text" name="description"><br>
+    <label>Image URL: </label> <input class="form-control" type="text" name="image_url"><br>
+    <label>X Coordinate: </label> <input class="form-control" type="text" name="x_coord"><br>
+    <label>Y Coordinate: </label> <input class="form-control" type="text" name="y_coord"><br>
+    <br />
+    <input type="Submit">
+  </div>
+</form>
